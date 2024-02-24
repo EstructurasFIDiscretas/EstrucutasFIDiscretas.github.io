@@ -118,7 +118,21 @@
             height: 100%;
             z-index: -1; 
         }
-
+        
+        .libro-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .libro-info .info {
+            width: calc(50% - 10px); /* El ancho del 50% menos el espacio entre las columnas */
+        }
+        
+        .libro-info .mapa {
+            width: calc(50% - 10px); /* El ancho del 50% menos el espacio entre las columnas */
+        }
+        
     </style>
 </head>
 <body>
@@ -145,20 +159,28 @@
     <div id="home" style="text-align: center;">
         <h2 style="color: white; font-size: 40px;">Inicio</h2>
         <p class="content-text" style="color: white; font-size: 20px;">Material de apoyo-Estructuras Discretas.</p>
-        <p style="color: white; font-size: 20px;">¿Quieres interactuar con nuestro bot?<br><a href="https://t.me/Mathematicaldiscretbot" style="color: white;">Pulsa aquí</a></p>
+        <p style="color: rgb(16, 68, 236); font-size: 20px;">¿Quieres interactuar con nuestro bot?<br><a href="https://t.me/Mathematicaldiscretbot" style="color: rgb(173, 235, 4);">Pulsa aquí</a></p>
     </div>
     
     <div id="info" class="content info" style="display:none;">
         <h2>Información</h2>
-        <p class="content-text">NL: NL: NL: NE: </p>
         <button class="edit-btn" onclick="checkAndLoadContentForEdit('info')">Editar</button>
-    </div>
+    </div>    
       
     <div id="libros" class="content libros" style="display:none;">
         <h2>Libros Facultad de Ingenieria</h2>
-        <h2>(Autor, Fecha, Titulo, Editorial, Lugar)</h2>
-        <ol id="listaLibros" class="content-text alternating-colors"></ol>
-        <button class="edit-btn" onclick="checkAndLoadContentForEdit('libros')">Editar</button>
+        <div class="libro-info">
+            <div class="info">
+                <h3>Información del libro</h3>
+                <h2>(Autor, Fecha, Título, Editorial, Lugar, Temas Relacionados.)</h2>
+                <ol id="listaLibros" class="content-text alternating-colors"></ol>
+                <button class="edit-btn" onclick="checkAndLoadContentForEdit('libros')">Editar</button>
+            </div>
+            <div class="mapa">
+                <h3>Ubicación</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d677.1973545960943!2d-99.1828121059949!3d19.326010932924568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9499c084eb6b9838!2sBiblioteca+Enrique+Rivero+Borrel!5e0!3m2!1ses-419!2smx!4v1506109021222" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
     </div>
     
     <div id="libros_unam" class="content libros" style="display:none;">
@@ -200,3 +222,4 @@
 
 </body>
 </html>
+

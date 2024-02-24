@@ -188,8 +188,10 @@ function checkAndLoadContentForEdit(sectionId) {
 }
 
 function loadContentForEdit(sectionId) {
+     toggleEdit(sectionId);
     var section = document.getElementById(sectionId);
     var content = section.innerHTML;
+    
     document.getElementById('editContent').value = content;
     openModal();
 }
